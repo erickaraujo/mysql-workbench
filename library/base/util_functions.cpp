@@ -369,6 +369,11 @@ std::string get_local_os_name() {
   *dot_position = 0;
   int version = base::atoi<int>(info.release, 0);
   switch (version) {
+<<<<<<< HEAD
+=======
+    case 17:
+      return std::string("macOS 10.13.x High Sierra ") + info.machine;
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
     case 16:
       return std::string("macOS 10.12.x Sierra ") + info.machine;
     case 15:

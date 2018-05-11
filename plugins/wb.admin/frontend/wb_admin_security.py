@@ -440,6 +440,10 @@ class SecuritySchemaPrivileges(mforms.Box):
 
         self.resume_layout()
         splitter.set_divider_position(200)
+<<<<<<< HEAD
+=======
+        splitter.set_expanded(False, True)
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
 
     ####
 

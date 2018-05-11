@@ -441,6 +441,7 @@ Drop View: %(Com_drop_view)s"""),
   (0, 0, 0), (570, 120),
   ""),
 ]
+<<<<<<< HEAD
 
 GLOBAL_DASHBOARD_WIDGETS_MYSQL_POST_80 = \
 [
@@ -540,6 +541,107 @@ GLOBAL_DASHBOARD_WIDGETS_MYSQL_POST_80 = \
   ""),
 ]
 
+=======
+
+GLOBAL_DASHBOARD_WIDGETS_MYSQL_POST_80 = \
+[
+ (None, DBImage, (mforms.App.get().get_resource_path("dashboard_header_mysql.png"),), None, (None, None),
+  (0, 0, 0), (380, 5),
+  ""),
+ (None, DBText, ("Primary MySQL Server activity\nand performance statistics.",), None, (None, None),
+  (0.4, 0.4, 0.4), (376, 72),
+  ""),
+ 
+ ("Table Open Cache", DBRoundMeter, ("Efficiency",), None, (CRawValue, "%(Table_open_cache_hits)s/(%(Table_open_cache_hits)s+%(Table_open_cache_misses)s+0.0)"),
+  (124/255.0, 193/255.0, 80/255.0), (380, 150),
+  """Table Open Cache
+      Cache for minimizing number of times MySQL
+      will open database tables when accessed.
+      
+      Table open cache hits: %(Table_open_cache_hits)s
+      Table open cache misses: %(Table_open_cache_misses)s"""),
+ 
+ ("SQL Statements Executed (#)", DBTimeLineGraph, ("%.1f %s", 3, True), None, (CTupleDifferencePerSecond, "(%(Com_select)s,%(Com_insert)s+%(Com_update)s+%(Com_delete)s,%(Com_create_db)s+%(Com_create_event)s+%(Com_create_function)s+%(Com_create_index)s+%(Com_create_procedure)s+%(Com_create_server)s+%(Com_create_table)s+%(Com_create_trigger)s+%(Com_create_udf)s+%(Com_create_user)s+%(Com_create_view)s+%(Com_create_role)s+%(Com_alter_db)s+%(Com_alter_event)s+%(Com_alter_function)s+%(Com_alter_procedure)s+%(Com_alter_server)s+%(Com_alter_table)s+%(Com_alter_tablespace)s+%(Com_alter_user)s+%(Com_alter_user_default_role)s+%(Com_drop_db)s+%(Com_drop_event)s+%(Com_drop_function)s+%(Com_drop_index)s+%(Com_drop_procedure)s+%(Com_drop_server)s+%(Com_drop_table)s+%(Com_drop_trigger)s+%(Com_drop_user)s+%(Com_drop_view)s+%(Com_drop_role)s)"),
+  [(255/255.0, 201/255.0, 2/255.0), (126/255.0, 142/255.0, 207/255.0), (194/255.0, 123/255.0, 206/255.0)], (350, 330),
+  None),
+ 
+ (None, DBSimpleCounter, ("SELECT\n%.0f %s/s", True), None, (CSingleDifferencePerSecond, "%(Com_select)s"),
+  (255/255.0, 201/255.0, 2/255.0), (350, 470),
+  """SELECT Statements Executed
+      
+      Total since start: %(Com_select)s"""),
+ 
+ (None, DBSimpleCounter, ("INSERT\n%.0f %s/s", True), None, (CSingleDifferencePerSecond, "%(Com_insert)s"),
+  (126/255.0, 142/255.0, 207/255.0), (350, 520),
+  """INSERT Statements Executed
+      
+      Total since start: %(Com_insert)s"""),
+ (None, DBSimpleCounter, ("UPDATE\n%.0f %s/s", True), None, (CSingleDifferencePerSecond, "%(Com_update)s"),
+  (126/255.0, 142/255.0, 207/255.0), (350, 560),
+  """UPDATE Statements Executed
+      
+      Total since start: %(Com_update)s"""),
+ (None, DBSimpleCounter, ("DELETE\n%.0f %s/s", True), None, (CSingleDifferencePerSecond, "%(Com_delete)s"),
+  (126/255.0, 142/255.0, 207/255.0), (350, 600),
+  """DELETE Statements Executed
+      
+      Total since start: %(Com_delete)s"""),
+ 
+ (None, DBSimpleCounter, ("CREATE\n%.0f %s/s", True), None, (CSingleDifferencePerSecond, "%(Com_create_db)s+%(Com_create_event)s+%(Com_create_function)s+%(Com_create_index)s+%(Com_create_procedure)s+%(Com_create_server)s+%(Com_create_table)s+%(Com_create_trigger)s+%(Com_create_udf)s+%(Com_create_user)s+%(Com_create_view)s+%(Com_create_role)s"),
+  (194/255.0, 123/255.0, 206/255.0), (445, 520),
+"""CREATE Statements Executed
+    Number of CREATE statements executed by the server (since server was started).
+    
+    Create DB: %(Com_create_db)s
+    Create Event: %(Com_create_event)s
+    Create Function: %(Com_create_function)s
+    Create Index: %(Com_create_index)s
+    Create Procedure: %(Com_create_procedure)s
+    Create Role: %(Com_create_role)s
+    Create Server: %(Com_create_server)s
+    Create Table: %(Com_create_table)s
+    Create Trigger: %(Com_create_trigger)s
+    Create UDF: %(Com_create_udf)s
+    Create User: %(Com_create_user)s
+    Create View: %(Com_create_view)s"""),
+ (None, DBSimpleCounter, ("ALTER\n%.0f %s/s", True), None, (CSingleDifferencePerSecond, "%(Com_alter_db)s+%(Com_alter_event)s+%(Com_alter_function)s+%(Com_alter_procedure)s+%(Com_alter_server)s+%(Com_alter_table)s+%(Com_alter_tablespace)s+%(Com_alter_user)s+%(Com_alter_user_default_role)s"),
+  (194/255.0, 123/255.0, 206/255.0), (445, 560),
+"""ALTER Statements Executed
+    Number of ALTER statements executed by the server (since server was started).
+    
+    Alter DB: %(Com_alter_db)s
+    Alter Event: %(Com_alter_event)s
+    Alter Function: %(Com_alter_function)s
+    Alter Procedure: %(Com_alter_procedure)s
+    Alter Server: %(Com_alter_server)s
+    Alter Table: %(Com_alter_table)s
+    Alter Tablespace: %(Com_alter_tablespace)s
+    Alter User: %(Com_alter_user)s
+    Alter User Default Role: %(Com_alter_user_default_role)s"""),
+ 
+ (None, DBSimpleCounter, ("DROP\n%.0f %s/s", True), None, (CSingleDifferencePerSecond, "%(Com_drop_db)s+%(Com_drop_event)s+%(Com_drop_function)s+%(Com_drop_index)s+%(Com_drop_procedure)s+%(Com_drop_server)s+%(Com_drop_table)s+%(Com_drop_trigger)s+%(Com_drop_user)s+%(Com_drop_view)s+%(Com_drop_role)s"),
+  (194/255.0, 123/255.0, 206/255.0), (445, 600),
+  """DROP Statements Executed
+      Number of DROP statements executed by the server (since server was started).
+      
+      Drop DB: %(Com_drop_db)s
+      Drop Event: %(Com_drop_event)s
+      Drop Function: %(Com_drop_function)s
+      Drop Index: %(Com_drop_index)s
+      Drop Procedure: %(Com_drop_procedure)s
+      Drop Role: %(Com_drop_role)s
+      Drop Server: %(Com_drop_server)s
+      Drop Table: %(Com_drop_table)s
+      Drop Trigger: %(Com_drop_trigger)s
+      Drop User: %(Com_drop_user)s
+      Drop View: %(Com_drop_view)s"""),
+ 
+ (None, DBImage, (mforms.App.get().get_resource_path("dashboard_separator.png"),), None, (None, None),
+  (0, 0, 0), (570, 120),
+  ""),
+]
+
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
 GLOBAL_DASHBOARD_WIDGETS_INNODB = \
 [
  # InnoDB
@@ -710,6 +812,7 @@ class WbAdminDashboard(WbAdminBaseTab):
         self.ctrl_be.add_me_for_event("server_started", self)
         self.ctrl_be.add_me_for_event("server_stopped", self)
 
+<<<<<<< HEAD
 
     def server_started_event(self):
         for widget in self.widgets:
@@ -719,6 +822,17 @@ class WbAdminDashboard(WbAdminBaseTab):
             if issubclass(type(widget.calc), CDifferencePerSecond):
                 widget.calc.reset()
 
+=======
+
+    def server_started_event(self):
+        for widget in self.widgets:
+            if not hasattr(widget, "calc"):
+                continue
+              
+            if issubclass(type(widget.calc), CDifferencePerSecond):
+                widget.calc.reset()
+
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
     #---------------------------------------------------------------------------
     def server_stopped_event(self):
         pass
@@ -764,9 +878,6 @@ class WbAdminDashboard(WbAdminBaseTab):
     def relayout(self):
         full_width = max(1024, self.content.get_width())
         full_height = max(700, self.content.get_height())
-
-        if self.drawbox.get_width() != full_width or self.drawbox.get_height() != full_height:
-            self.drawbox.set_size(full_width, full_height)
 
         # return offset
         return (full_width - 1024) / 2, (full_height - 700) / 2

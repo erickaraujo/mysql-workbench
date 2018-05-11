@@ -1184,8 +1184,13 @@ bool AdvancedSidebar::init_factory_method() {
 //--------------------------------------------------------------------------------------------------
 
 AdvancedSidebar::AdvancedSidebar()
+<<<<<<< HEAD
   : _new_schema_tree(TreeNoColumns | TreeNoBorder | TreeSidebar | TreeNoHeader | TreeCanBeDragSource),
     _filtered_schema_tree(TreeNoColumns | TreeNoBorder | TreeSidebar | TreeNoHeader | TreeCanBeDragSource),
+=======
+  : _new_schema_tree(TreeNoColumns | TreeNoBorder | TreeSidebar | TreeNoHeader | TreeCanBeDragSource | TreeColumnsAutoResize),
+    _filtered_schema_tree(TreeNoColumns | TreeNoBorder | TreeSidebar | TreeNoHeader | TreeCanBeDragSource | TreeColumnsAutoResize),
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
     _schema_search_box(true),
     _schema_search_text(mforms::SmallSearchEntry),
     _remote_search_enabled(false),

@@ -143,6 +143,10 @@ public:
   WbPluginDiffReport(grt::Module *module) : WizardPlugin(module) {
     set_name("diff_report_wizard");
     add_page(mforms::manage(_source_page = new MultiSourceSelectPage(this, false)));
+<<<<<<< HEAD
+=======
+    _source_page->relayout();
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
 
     _left_db.grtm(true);
     _right_db.grtm(true);

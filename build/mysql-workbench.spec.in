@@ -8,7 +8,11 @@
 # Here's a usage example:
 # rpmbuild -ba mysql-workbench.spec --target=`arch` \
 #                                   --define='edition community' \
+<<<<<<< HEAD
 #                                   --define='version 6.3.9' \
+=======
+#                                   --define='version 6.3.10' \
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
 #                                   --define='release 1'
 ####################################################################
 
@@ -28,6 +32,9 @@
 
 # Allow to continue when a binary with no build-id was found
 %undefine _missing_build_ids_terminate_build
+
+# Disable debug source packages
+%undefine _debugsource_packages
 
 %if !%{defined version}
 %define version         @VERSION@
@@ -107,6 +114,13 @@ BuildRequires: libgnome-keyring-devel libuuid-devel
 %else
 BuildRequires: gnome-keyring-devel
 %endif
+<<<<<<< HEAD
+=======
+
+%if 0%{?fedora} >= 26
+BuildRequires: jasper-devel
+%endif
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
 
 Provides: mysql-workbench = %{version}-%{release}
 Provides: mysql-workbench%{?_isa} = %{version}-%{release}

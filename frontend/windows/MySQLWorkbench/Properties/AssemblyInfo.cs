@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MySQL.GUI.Workbench;
@@ -11,7 +11,11 @@ using MySQL.GUI.Workbench;
 [assembly: AssemblyConfiguration("development")]
 [assembly: AssemblyCompany("Oracle Corporation")]
 [assembly: AssemblyProduct("MySQL Workbench")]
+<<<<<<< HEAD
 [assembly: AssemblyCopyright("Copyright © 2006, 2016, Oracle and/or its affiliates")]
+=======
+[assembly: AssemblyCopyright("Copyright © 2006, 2017, Oracle and/or its affiliates")]
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +33,10 @@ using MySQL.GUI.Workbench;
 //      Minor Version 
 //      Release Number
 //
+<<<<<<< HEAD
 [assembly: AssemblyVersion("6.3.9")]
 [assembly: AssemblyFileVersion("6.3.9")]
+=======
+[assembly: AssemblyVersion("6.3.10")]
+[assembly: AssemblyFileVersion("6.3.10")]
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392

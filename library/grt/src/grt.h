@@ -451,6 +451,7 @@ namespace grt {
 
     Ref<Class> &operator=(const Ref<Class> &other) {
       Ref<Class> tmp(other);
+<<<<<<< HEAD:library/grt/src/grt.h
       swap(tmp._value);
       return *this;
     }
@@ -462,6 +463,26 @@ namespace grt {
       return !(operator==(other));
     }
 
+=======
+#ifdef __linux__
+      #pragma GCC diagnostic push
+      #pragma GCC diagnostic ignored "-Wstrict-aliasing"
+#endif
+      swap(tmp._value);
+#ifdef __linux__
+      #pragma GCC diagnostic pop
+#endif
+      return *this;
+    }
+
+    bool operator==(const ValueRef &other) const {
+      return _value == other.valueptr() || (_value && content().equals(other.valueptr()));
+    }
+    bool operator!=(const ValueRef &other) const {
+      return !(operator==(other));
+    }
+
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392:library/grt/src/grt.h
     Class *operator->() const {
       return static_cast<Class *>(_value);
     }
@@ -899,6 +920,7 @@ namespace grt {
     }
 
     Ref(const char *value) : ValueRef(internal::String::get(value)) {
+<<<<<<< HEAD:library/grt/src/grt.h
     }
 
     inline operator storage_type() const {
@@ -908,6 +930,17 @@ namespace grt {
       return *content();
     }
 
+=======
+    }
+
+    inline operator storage_type() const {
+      return *content();
+    }
+    inline storage_type operator*() const {
+      return *content();
+    }
+
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392:library/grt/src/grt.h
     const char *c_str() const {
       return content().c_str();
     }
@@ -1082,6 +1115,7 @@ namespace grt {
     }
 
     BaseListRef(bool allow_null) : ValueRef(new internal::List(allow_null)) {
+<<<<<<< HEAD:library/grt/src/grt.h
     }
 
     BaseListRef(Type type, const std::string &class_name = "", internal::Object *owner = 0, bool allow_null = true)
@@ -1096,6 +1130,22 @@ namespace grt {
       return content().content_class_name();
     }
 
+=======
+    }
+
+    BaseListRef(Type type, const std::string &class_name = "", internal::Object *owner = 0, bool allow_null = true)
+      : ValueRef(owner ? new internal::OwnedList(type, class_name, owner, allow_null)
+                       : new internal::List(type, class_name, allow_null)) {
+    }
+
+    inline Type content_type() const {
+      return content().content_type();
+    };
+    inline std::string content_class_name() const {
+      return content().content_class_name();
+    }
+
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392:library/grt/src/grt.h
     static bool can_wrap(const ValueRef &value) {
       return value.type() == ListType;
     }
@@ -1394,9 +1444,15 @@ namespace grt {
 
     static inline bool can_wrap(const ValueRef &value) {
       if (value.type() != ListType)
+<<<<<<< HEAD:library/grt/src/grt.h
         return false;
       if (static_cast<internal::List *>(value.valueptr())->content_type() != DoubleType)
         return false;
+=======
+        return false;
+      if (static_cast<internal::List *>(value.valueptr())->content_type() != DoubleType)
+        return false;
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392:library/grt/src/grt.h
       return true;
     }
 

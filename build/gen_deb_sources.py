@@ -5,6 +5,11 @@
 
 
 output_distros = [
+<<<<<<< HEAD
+=======
+    ("artful", "ubuntu17.10", "1710", ""),
+    ("zesty", "ubuntu17.04", "1704", ""),
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
     ("yakkety", "ubuntu16.10", "1610", ""),
     ("xenial" ,"ubuntu16.04" ,"1604"  ,""),
     ("trusty" ,"ubuntu14.04" ,"1404"  ,"paramiko"),

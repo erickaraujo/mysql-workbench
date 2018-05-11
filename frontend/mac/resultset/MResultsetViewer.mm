@@ -1,5 +1,9 @@
 /* 
+<<<<<<< HEAD
  * Copyright (c) 2009, 2016, Oracle and/or its affiliates. All rights reserved.
+=======
+ * Copyright (c) 2009, 2017, Oracle and/or its affiliates. All rights reserved.
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -84,6 +88,7 @@ static NSImage *descendingSortIndicator= nil;
 
       (*mData)->refresh_ui_signal.connect(std::bind(onRefresh, (__bridge void *)self));
       (*mData)->rows_changed = std::bind(onRefresh, (__bridge void *)self);
+<<<<<<< HEAD
 
       gridView.intercellSpacing = NSMakeSize(0, 1);
       gridView.actionDelegate = self;
@@ -91,6 +96,15 @@ static NSImage *descendingSortIndicator= nil;
 
       (gridView.enclosingScrollView).borderType = NSNoBorder;
 
+=======
+
+      gridView.intercellSpacing = NSMakeSize(0, 1);
+      gridView.actionDelegate = self;
+      gridView.allowsMultipleSelection = YES;
+
+      (gridView.enclosingScrollView).borderType = NSNoBorder;
+
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
       mforms::ToolBar *tbar = (*mData)->get_toolbar();
       if (tbar->find_item("record_edit"))
       {
@@ -149,12 +163,17 @@ static const char *viewFlagsKey = "viewFlagsKey";
 
 - (void)rebuildColumns
 {
+<<<<<<< HEAD
   for (id column in [gridView.tableColumns reverseObjectEnumerator])
   {
     if ([column identifier])
       [gridView removeTableColumn: column];
+=======
+  for (NSUInteger i = gridView.tableColumns.count - 1; i > 0; --i) {
+    [gridView removeTableColumn: gridView.tableColumns[i]];
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
   }
-
+  
   if (mWarnedManyColumns == 0 && (*mData)->get_column_count() > 300)
   {
     NSAlert *alert = [NSAlert new];
@@ -203,9 +222,14 @@ static const char *viewFlagsKey = "viewFlagsKey";
   mFont = font;
 
   float rowHeight = 0;
+<<<<<<< HEAD
   for (size_t index = 0, count = (*mData)->get_column_count(); index <= count; ++index)
   {
     NSTableColumn *column= gridView.tableColumns[index];
+=======
+  for (NSTableColumn *column in gridView.tableColumns)
+  {
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
     if (mFont)
     {
       [column.dataCell setFont: mFont];
@@ -454,7 +478,11 @@ static int onRefresh(void *viewer)
     forTableColumn: (NSTableColumn*) aTableColumn
                row: (NSInteger) rowIndex;
 {
+<<<<<<< HEAD
   if (aTableColumn.identifier != nil)
+=======
+  if (aTableColumn.identifier && ![[aTableColumn identifier] isEqualToString: @""])
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
   {
     int columnIndex = aTableColumn.identifier.intValue;    
     

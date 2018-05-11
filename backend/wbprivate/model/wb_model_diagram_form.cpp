@@ -1309,7 +1309,11 @@ bool ModelDiagramForm::search_and_focus_object(const std::string &text) {
     found_object = search_object_list(_model_diagram->figures(), index, text);
   }
 
+<<<<<<< HEAD
   if (!found_object.is_valid() && selected.is_instance(model_Connection::static_class_name())) {
+=======
+  if (!found_object.is_valid() && (!selected.is_valid() || selected.is_instance(model_Connection::static_class_name()))) {
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
     size_t index = 0;
     if (selected.is_valid()) {
       index = _model_diagram->connections().get_index(selected);
@@ -1321,7 +1325,11 @@ bool ModelDiagramForm::search_and_focus_object(const std::string &text) {
     found_object = search_object_list(_model_diagram->connections(), index, text);
   }
 
+<<<<<<< HEAD
   if (!found_object.is_valid() && selected.is_instance(model_Layer::static_class_name())) {
+=======
+  if (!found_object.is_valid() && (!selected.is_valid() || selected.is_instance(model_Layer::static_class_name()))) {
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
     size_t index = 0;
     if (selected.is_valid()) {
       index = _model_diagram->layers().get_index(selected);

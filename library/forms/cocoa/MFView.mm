@@ -741,8 +741,18 @@ static void view_set_size(::mforms::View *self, int w, int h)
       size.height = 0;
     view.minimumSize = size;
   } else {
+<<<<<<< HEAD
     // Window/panel.
     NSWindow *window = frontend;
+=======
+      // Window controller/window/panel.
+      NSWindow *window;
+      if ([frontend isKindOfClass: NSWindowController.class])
+          window = [frontend window];
+      else
+          window = frontend;
+
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
     NSRect frame = window.frame;
     if (w >= 0)
       frame.size.width = w;
@@ -765,8 +775,18 @@ static void view_set_min_size(::mforms::View *self, int w, int h)
       size.height = 0;
     view.minimumSize = size;
   } else {
+<<<<<<< HEAD
     // Window/panel.
     NSWindow *window = frontend;
+=======
+      // Window controller/window/panel.
+      NSWindow *window;
+      if ([frontend isKindOfClass: NSWindowController.class])
+          window = [frontend window];
+      else
+          window = frontend;
+
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
     NSRect frame = window.frame;
     if (w >= 0)
       frame.size.width = w;

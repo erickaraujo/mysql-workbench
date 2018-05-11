@@ -64,6 +64,10 @@ namespace mforms {
     TreeIndexOnTag = 1 << 13,      //!< keep a node index on the tags (use with node_with_tag)
 
     TreeCanBeDragSource = 1 << 14, //!< allow the tree to be a drag source, data used depends on actual tree
+<<<<<<< HEAD
+=======
+    TreeColumnsAutoResize = 1 << 15, //!< used only on OSX enable column autoresize
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
   };
 
 #ifndef SWIG

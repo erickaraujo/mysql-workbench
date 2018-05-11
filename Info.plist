@@ -72,7 +72,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
+<<<<<<< HEAD
 	<string>6.3.9</string>
+=======
+	<string>6.3.10</string>
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -87,7 +91,11 @@
 		<true/>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
+<<<<<<< HEAD
 	<string>Copyright (c) 2008, 2016, Oracle and/or its affiliates. All rights reserved.</string>
+=======
+	<string>Copyright (c) 2008, 2017, Oracle and/or its affiliates. All rights reserved.</string>
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>

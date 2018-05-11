@@ -1334,6 +1334,10 @@ void JsonGridView::setCellValue(mforms::TreeNodeRef node, int column, const std:
         storedValue = number;
         node->set_float(column, number);
         _dataChanged(false);
+<<<<<<< HEAD
+=======
+	break;
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
       case VInt64:
         if (!base::is_number(value))
           break;

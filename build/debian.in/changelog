@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+mysql-workbench-@edition@ (6.3.10-1@distrov@) @distro@; urgency=low
+
+  * New release
+
+ -- Milosz Bodzek <milosz.bodzek@oracle.com>  Wed, 04 Oct 2017 09:10:11 +0200
+
+>>>>>>> 6a5e94efe07c53f864dc499cf98a0982f6a7d392
 mysql-workbench-@edition@ (6.3.9-1@distrov@) @distro@; urgency=low
 
   * New release
